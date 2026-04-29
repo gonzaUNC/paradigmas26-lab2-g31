@@ -38,7 +38,16 @@ object Dictionary {
    *
    */
   def loadFromFile(filePath: String, entityType: String): List[NamedEntity] = {
-    ???
+    // leemos las lineas del archivo (FileIO ya ignora vacias y comentarios)
+    val lines = FileIO.readLines(filePath)
+    // por cada linea creamos la instancia del tipo que corresponde
+    lines.map(name => entityType match {
+      case "Person" => new Person(name)
+      case "University" => new University(name)
+      case "ProgrammingLanguage" => new ProgrammingLanguage(name)
+      case "Organization" => new Organization(name)
+      case "Place" => new Place(name)
+    })
   }
 
   /**
