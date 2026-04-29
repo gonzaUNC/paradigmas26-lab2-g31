@@ -45,3 +45,8 @@ class Organization(text: String) extends NamedEntity(text) {
 class University(text: String) extends Organization(text) {
   override def entityType: String = "University"
 }
+
+// lugar geografico
+class Place(text: String) extends NamedEntity(text) {
+  def entityType: String = "Place"
+}
