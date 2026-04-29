@@ -55,3 +55,8 @@ class Place(text: String) extends NamedEntity(text) {
 class Technology(text: String) extends NamedEntity(text) {
   def entityType: String = "Technology"
 }
+
+// lenguaje de programacion, tipo de tecnologia
+class ProgrammingLanguage(text: String) extends Technology(text) {
+  override def entityType: String = "ProgrammingLanguage"
+}
