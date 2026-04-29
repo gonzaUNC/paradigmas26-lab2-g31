@@ -50,3 +50,8 @@ class University(text: String) extends Organization(text) {
 class Place(text: String) extends NamedEntity(text) {
   def entityType: String = "Place"
 }
+
+// tecnologia 
+class Technology(text: String) extends NamedEntity(text) {
+  def entityType: String = "Technology"
+}
