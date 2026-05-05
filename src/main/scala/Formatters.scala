@@ -36,7 +36,7 @@ object Formatters {
       if (entities.isEmpty)
         "  (sin entidades detectadas)"
         else
-        "Entidades detectadas:\n" + entities.map(e => s"  ${e.describe}").String("\n")
+        "Entidades detectadas:\n" + entities.map(e => s"  ${e.describe}").mkString("\n")
     s"$header\n$body"
   }
 
