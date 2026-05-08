@@ -41,10 +41,7 @@ object Main {
     // ------------------------------------------------------------------
     // Paso 4: Estadísticas globales
     // ------------------------------------------------------------------
-    // TODO (Ejercicios 5 y 6):
-    //   1. Recolectar TODAS las entidades detectadas en todos los posts
-    //   2. Contar por tipo
-    //   3. Mostrar el resumen
-
+    val counts = Analyzer.countByType(allDetectedEntities)
+    val stats = Formatters.formatEntityStats(counts)
   }
 }
