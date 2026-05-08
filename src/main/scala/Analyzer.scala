@@ -61,6 +61,6 @@ object Analyzer {
    */
   def countByType(entities: List[NamedEntity]): Map[String, Int] = {
     val grouped = entities.groupBy(entity => entity.entityType)
-    Map.empty
+    grouped.map { case (entityType, entityList) => entityType -> entityList.length }
   }
 }
