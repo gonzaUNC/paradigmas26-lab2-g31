@@ -58,6 +58,7 @@ object Formatters {
    */
   def formatEntityStats(counts: Map[String, Int]): String = {
     val header = "=== Estadísticas de entidades ==="
+    val sorted = counts.toList.sortBy { case (_, count) => -count }
     header
   }
 }
