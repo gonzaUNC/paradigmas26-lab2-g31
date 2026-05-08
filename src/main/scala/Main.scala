@@ -28,10 +28,15 @@ object Main {
     // ------------------------------------------------------------------
     // Paso 3: Detectar entidades y mostrar resultados por post
     // ------------------------------------------------------------------
-    // TODO (Ejercicios 3, 4 y 6):
-    //   Para cada post:
-    //     1. Detectar entidades
-    //     2. Formatear y mostrar el resultado
+    val allDetectedEntities: List[NamedEntity] = allPosts.flatMap { case (url, titles) =>
+      println(s"\nProcesando Posts de: $url")
+
+      titles.flatMap { title =>
+        val entities = Analyzer.detectEntities(title, dictionary)
+        println(Formatters.formatNERResult(title, entities))
+        entities
+      }
+    }
 
     // ------------------------------------------------------------------
     // Paso 4: Estadísticas globales
