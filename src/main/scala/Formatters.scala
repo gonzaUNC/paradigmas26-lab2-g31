@@ -57,9 +57,13 @@ object Formatters {
    *     University: 2
    */
   def formatEntityStats(counts: Map[String, Int]): String = {
+    // encabezado fijo de la sección de estadísticas
     val header = "=== Estadísticas de entidades ==="
+    // ordenamos de mayor a menor por cantidad
     val sorted = counts.toList.sortBy { case (_, count) => -count }
+    // formateamos cada entrada como "Tipo: cantidad"
     val lines = sorted.map { case (entityType, count) => s"$entityType: $count" }
-    header
+    // combinamos encabezado y líneas en un solo string
+    (header :: lines).mkString("\n")
   }
 }
