@@ -43,5 +43,6 @@ object Main {
     // ------------------------------------------------------------------
     val counts = Analyzer.countByType(allDetectedEntities)
     val stats = Formatters.formatEntityStats(counts)
+    println(s"\n$stats")
   }
 }
