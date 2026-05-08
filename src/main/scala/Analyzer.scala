@@ -60,6 +60,7 @@ object Analyzer {
    *                 )
    */
   def countByType(entities: List[NamedEntity]): Map[String, Int] = {
-    ???
+    val grouped = entities.groupBy(entity => entity.entityType)
+    Map.empty
   }
 }
