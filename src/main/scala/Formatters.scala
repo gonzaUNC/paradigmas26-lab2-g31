@@ -57,6 +57,7 @@ object Formatters {
    *     University: 2
    */
   def formatEntityStats(counts: Map[String, Int]): String = {
-    ???
+    val header = "=== Estadísticas de entidades ==="
+    header
   }
 }
